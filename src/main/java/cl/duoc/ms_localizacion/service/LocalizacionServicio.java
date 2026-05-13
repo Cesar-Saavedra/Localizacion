@@ -13,6 +13,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import cl.duoc.ms_localizacion.dto.DireccionRespuestaDto;
+import cl.duoc.ms_localizacion.dto.RegistrarDireccionDto;
 import cl.duoc.ms_localizacion.model.Direccion;
 import cl.duoc.ms_localizacion.repository.DireccionRepositorio;
 
@@ -229,7 +231,7 @@ public class LocalizacionServicio {
      */
     public List<DireccionRespuestaDto> buscarPorCiudad(String ciudad, String authHeader) {
 
-        List<Direccion> direcciones = direccionRepositorio.findByCiudad(ciudad);
+        List<Direccion> direcciones = direccionRepositorio.FindbyCiudad(ciudad);
 
         List<DireccionRespuestaDto> listaRespuesta = new ArrayList<>();
         for (Direccion dir : direcciones) {
