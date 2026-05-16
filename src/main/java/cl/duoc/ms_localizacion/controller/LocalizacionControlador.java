@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cl.duoc.ms_localizacion.dto.DireccionRespuestaDto;
 import cl.duoc.ms_localizacion.dto.RegistrarDireccionDto;
+import cl.duoc.ms_localizacion.security.JwtUtil;
 import cl.duoc.ms_localizacion.service.LocalizacionServicio;
 
 @RestController
