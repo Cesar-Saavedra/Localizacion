@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import cl.duoc.ms_localizacion.model.Direccion;
 
 @Repository
-public interface  DireccionRepositorio extends JpaRepository<Direccion, Integer>{
+public interface DireccionRepositorio extends JpaRepository<Direccion, Integer>{
 
     Optional<Direccion> findByTiendaId(Integer tiendaId);
 
