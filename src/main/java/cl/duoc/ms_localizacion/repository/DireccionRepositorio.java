@@ -14,7 +14,7 @@ public interface DireccionRepositorio extends JpaRepository<Direccion, Integer>{
     Optional<Direccion> findByTiendaId(Integer tiendaId);
 
 
-    List<Direccion> FindbyCiudad(String ciudad);
+    List<Direccion> findByCiudad(String ciudad);
 
 
     boolean existsByTiendaId(Integer tiendaId);

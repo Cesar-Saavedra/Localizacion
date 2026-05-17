@@ -231,7 +231,7 @@ public class LocalizacionServicio {
      */
     public List<DireccionRespuestaDto> buscarPorCiudad(String ciudad, String authHeader) {
 
-        List<Direccion> direcciones = direccionRepositorio.FindbyCiudad(ciudad);
+        List<Direccion> direcciones = direccionRepositorio.findByCiudad(ciudad);
 
         List<DireccionRespuestaDto> listaRespuesta = new ArrayList<>();
         for (Direccion dir : direcciones) {

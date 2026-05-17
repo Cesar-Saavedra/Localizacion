@@ -81,7 +81,7 @@ public class LocalizacionControlador {
 
     @PutMapping("/tienda/{tiendaId}")
     public ResponseEntity<?> actualizarUbicacion(
-            @RequestHeader(value = "Autorizacion", required = false) String authHeader,
+            @RequestHeader(value = "Authorization", required = false) String authHeader,
             @PathVariable Integer tiendaId,
             @RequestBody RegistrarDireccionDto dto) {
 
@@ -126,7 +126,7 @@ public class LocalizacionControlador {
      */
     @GetMapping("/cercanas")
     public ResponseEntity<?> buscarCercanas(
-            @RequestHeader(value = "Autorizacion", required = false) String authHeader,
+            @RequestHeader(value = "Authorization", required = false) String authHeader,
             @RequestParam Double latitud,
             @RequestParam Double longitud,
             @RequestParam(defaultValue = "10.0") Double radioKm) {
@@ -164,7 +164,7 @@ public class LocalizacionControlador {
      */
     @GetMapping("/ciudad/{ciudad}")
     public ResponseEntity<?> buscarPorCiudad(
-            @RequestHeader(value = "Autorizacion", required = false) String authHeader,
+            @RequestHeader(value = "Authorization", required = false) String authHeader,
             @PathVariable String ciudad) {
 
         String token = validarHeader(authHeader);
