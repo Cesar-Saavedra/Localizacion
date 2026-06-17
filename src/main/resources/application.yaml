@@ -1,0 +1,26 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: ms-localizacion
+  datasource:
+    url: jdbc:mysql://localhost:3307/ms_localizacion?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: root
+    password: ""
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+jwt:
+  secret: c2VjcmV0b011eUZ1ZXJ0ZVBhcmFDYXJkTGlua1Byb3llY3RvRHVvYzIwMjY=
+  expiration: 86400000
+
+ms:
+  tiendas:
+    url: http://localhost:8084
