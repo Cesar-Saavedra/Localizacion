@@ -21,6 +21,7 @@ import cl.duoc.ms_localizacion.dto.DireccionRespuestaDto;
 import cl.duoc.ms_localizacion.dto.RegistrarDireccionDto;
 import cl.duoc.ms_localizacion.security.JwtUtil;
 import cl.duoc.ms_localizacion.service.LocalizacionServicio;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/localizacion")
@@ -37,7 +38,7 @@ public class LocalizacionControlador {
     @PostMapping
     public ResponseEntity<?> registrarDireccion(
             @RequestHeader(value = "Authorization", required = false) String authHeader,
-            @RequestBody RegistrarDireccionDto dto) {
+            @Valid @RequestBody RegistrarDireccionDto dto) {
 
         // Validar que el token sea correcto
         String token = validarHeader(authHeader);
@@ -83,7 +84,7 @@ public class LocalizacionControlador {
     public ResponseEntity<?> actualizarUbicacion(
             @RequestHeader(value = "Authorization", required = false) String authHeader,
             @PathVariable Integer tiendaId,
-            @RequestBody RegistrarDireccionDto dto) {
+            @Valid @RequestBody RegistrarDireccionDto dto) {
 
         String token = validarHeader(authHeader);
         if (token == null) {
