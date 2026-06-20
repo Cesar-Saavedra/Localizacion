@@ -54,6 +54,13 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- Feign: cliente HTTP declarativo para comunicacion entre microservicios -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>5.0.1</version>
+        </dependency>
+
         <!-- Spring Security (validacion de JWT con FiltroJwt) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -91,6 +98,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <!-- Swagger / OpenAPI: documentacion interactiva en /swagger-ui.html -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>3.0.3</version>
         </dependency>
 
     </dependencies>

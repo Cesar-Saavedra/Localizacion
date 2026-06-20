@@ -26,6 +26,4 @@ jwt:
   secret: c2VjcmV0b011eUZ1ZXJ0ZVBhcmFDYXJkTGlua1Byb3llY3RvRHVvYzIwMjY=
   expiration: 86400000
 
-ms:
-  tiendas:
-    url: http://localhost:8084
+# URL de ms-tiendas eliminada: Feign resuelve el host via Eureka.

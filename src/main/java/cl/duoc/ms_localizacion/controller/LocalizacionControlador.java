@@ -21,10 +21,13 @@ import cl.duoc.ms_localizacion.dto.DireccionRespuestaDto;
 import cl.duoc.ms_localizacion.dto.RegistrarDireccionDto;
 import cl.duoc.ms_localizacion.security.JwtUtil;
 import cl.duoc.ms_localizacion.service.LocalizacionServicio;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/localizacion")
+@Tag(name = "Localizacion", description = "Gestión de ubicaciones geográficas de tiendas")
 public class LocalizacionControlador {
 
     @Autowired
@@ -36,6 +39,7 @@ public class LocalizacionControlador {
 
 
     @PostMapping
+    @Operation(summary = "Registrar ubicación", description = "Registra la dirección GPS de una tienda. Solo rol TIENDA.")
     public ResponseEntity<?> registrarDireccion(
             @RequestHeader(value = "Authorization", required = false) String authHeader,
             @Valid @RequestBody RegistrarDireccionDto dto) {
@@ -62,6 +66,7 @@ public class LocalizacionControlador {
 
 
     @GetMapping("/tienda/{tiendaId}")
+    @Operation(summary = "Ver ubicación de tienda", description = "Devuelve la dirección registrada de una tienda.")
     public ResponseEntity<?> verUbicacionTienda(
             @RequestHeader(value = "Authorization", required = false) String authHeader,
             @PathVariable Integer tiendaId) {
@@ -81,6 +86,7 @@ public class LocalizacionControlador {
     }
 
     @PutMapping("/tienda/{tiendaId}")
+    @Operation(summary = "Actualizar ubicación", description = "Actualiza la dirección de una tienda. Solo rol TIENDA.")
     public ResponseEntity<?> actualizarUbicacion(
             @RequestHeader(value = "Authorization", required = false) String authHeader,
             @PathVariable Integer tiendaId,
@@ -126,6 +132,7 @@ public class LocalizacionControlador {
      * Cada elemento incluye el campo "distanciaKm" con la distancia calculada
      */
     @GetMapping("/cercanas")
+    @Operation(summary = "Buscar tiendas cercanas", description = "Devuelve tiendas dentro del radio GPS indicado (default 10 km). Params: latitud, longitud, radioKm.")
     public ResponseEntity<?> buscarCercanas(
             @RequestHeader(value = "Authorization", required = false) String authHeader,
             @RequestParam Double latitud,
@@ -164,6 +171,7 @@ public class LocalizacionControlador {
      * (distanciaKm = null porque no es busqueda por cercania)
      */
     @GetMapping("/ciudad/{ciudad}")
+    @Operation(summary = "Buscar tiendas por ciudad", description = "Devuelve todas las tiendas registradas en la ciudad indicada.")
     public ResponseEntity<?> buscarPorCiudad(
             @RequestHeader(value = "Authorization", required = false) String authHeader,
             @PathVariable String ciudad) {
