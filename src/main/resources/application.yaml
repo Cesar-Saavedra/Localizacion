@@ -10,7 +10,7 @@ spring:
   application:
     name: ms-localizacion
   datasource:
-    url: jdbc:mysql://localhost:3307/ms_localizacion?createDatabaseIfNotExist=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/ms_localizacion?createDatabaseIfNotExist=true&serverTimezone=UTC
     username: root
     password: ""
     driver-class-name: com.mysql.cj.jdbc.Driver
